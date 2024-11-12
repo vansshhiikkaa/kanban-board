@@ -6,11 +6,22 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import EmailIcon from '@mui/icons-material/Email';
 
 function Ticket({ticket}) {
+const userColors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff'];
+
+// Create a mapping of user IDs to colors
+const userColorsMap = {};
+data.users.forEach((user, index) => {
+  userColorsMap[user.id] = userColors[index % userColors.length];
+});
+
+const getUserColor = (userId) => {
+  return userColorsMap[userId] || '#000000'; // Fallback to black if userId not found
+};
   return (
     <div className='ticket-main'>
         <div className='ticket-header'>
             <div className='ticket-id'>{ticket.id}</div>
-            <AccountCircleIcon color="disabled"/>
+            <AccountCircleIcon sx={{ color: getUserColor(data.users[key].id) }}/>
         </div>
         <div className='ticket-content'>
             <div className='ticket-content-title'>

@@ -8,11 +8,11 @@ import InfoIcon from '@mui/icons-material/Info';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
 // imparting required img
-import NoPriorityIcon from './No-priority.png';
-import UrgentIcon from './SVG - Urgent Priority colour.png';
-import HighPriorityIcon from './Img - High Priority.png';
-import MediumPriorityIcon from './Img - Medium Priority.png';
-import LowPriorityIcon from './Img - Low Priority.png';
+import NoPriorityIcon from './No-priority.svg';
+import UrgentIcon from './SVG - Urgent Priority colour.svg';
+import HighPriorityIcon from './Img - High Priority.svg';
+import MediumPriorityIcon from './Img - Medium Priority.svg';
+import LowPriorityIcon from './Img - Low Priority.svg';
 
 function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
     const [isLoading, setLoading] = useState(true);

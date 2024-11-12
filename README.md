@@ -27,7 +27,7 @@ A Kanban Board built using React.js. It has the following features:
 - Step 3: Run the frontend using `npm run start`
 
 ## Demo
-The platform has been hosted for demo purposes - https://quicksell-frontend-task-yash-seth.vercel.app/
+The platform has been hosted for demo purposes - https://quicksell-frontend-task-phi-wheat.vercel.app/
 
 ## Samples
 ### Grouped on Status, Ordered on Title
@@ -39,5 +39,3 @@ The platform has been hosted for demo purposes - https://quicksell-frontend-task
 ### Grouped on Priority, Ordered on Priority
 ![image](https://github.com/yash-seth/quicksell-frontend-task/assets/71393551/e11095aa-360c-4f1e-8b31-7e0c6be5de05)
 
-### Phone Screen View (Responsive Design)
-![image](https://github.com/yash-seth/quicksell-frontend-task/assets/71393551/660337c5-71d7-4064-ad47-329982f8cf2a)

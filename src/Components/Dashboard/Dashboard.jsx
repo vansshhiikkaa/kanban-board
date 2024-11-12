@@ -14,6 +14,12 @@ import HighPriorityIcon from './Img - High Priority.svg';
 import MediumPriorityIcon from './Img - Medium Priority.svg';
 import LowPriorityIcon from './Img - Low Priority.svg';
 
+import ToDoIcon from './To-do.svg';
+import InProgressIcon from './in-progress.svg';
+import BacklogIcon from './Backlog.svg';
+import DoneIcon from './Done.svg';
+import CancelledIcon from './Cancelled.svg';
+
 function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState({"tickets": [],
@@ -181,6 +187,13 @@ function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
         MediumPriorityIcon, // Medium
         LowPriorityIcon  // Low
     ];
+    const statusIcons = [
+    BacklogIcon,
+    ToDoIcon,
+    InProgressIcon,
+    DoneIcon,
+    CancelledIcon
+];
 
   return (
     <div className='dashboard-main'>
@@ -190,7 +203,7 @@ function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
                 <div className='dashboard-list'>
                     <div className='dashboard-list-header-controls'>
                         <div className='dashboard-list-header-controls-info'>
-                            <InfoIcon color="secondary"/>
+                            <img src={statusIcons[key]} alt={`${statuses[key]} icon`} className="status-icon"/>
                             <b><p className='dashboard-list-header'>{statuses[key]}</p></b>
                             <div className='dashboard-list-items-count'>{ticketList.length}</div>
                         </div>

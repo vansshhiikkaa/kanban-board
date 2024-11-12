@@ -10,8 +10,8 @@ const userColors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c
 
 // Create a mapping of user IDs to colors
 const userColorsMap = {};
-data.tickets.forEach((user, index) => {
-  userColorsMap[tickets.userId] = userColors[index % userColors.length];
+data.tickets.forEach((ticket, index) => {
+  userColorsMap[ticket.userId] = userColors[index % userColors.length];
 });
 
 const getUserColor = (userId) => {
@@ -21,7 +21,7 @@ const getUserColor = (userId) => {
     <div className='ticket-main'>
         <div className='ticket-header'>
             <div className='ticket-id'>{ticket.id}</div>
-            <AccountCircleIcon sx={{ color: getUserColor(tickets.userId) }}/>
+            <AccountCircleIcon sx={{ color: getUserColor(ticket.userId) }}/>
         </div>
         <div className='ticket-content'>
             <div className='ticket-content-title'>

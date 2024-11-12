@@ -194,7 +194,7 @@ function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
     DoneIcon,
     CancelledIcon
 ];
-const userColors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff'];
+const userColors = ['#ff5dad', '#f6bf36', '#0affbf', '#0bf6ff', '#bd76ff'];
 
 // Hash function to map userId to a color
   const getUserColor = (userId) => {

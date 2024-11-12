@@ -10,10 +10,10 @@ function App() {
   let statuses = ['Backlog', "Todo", 'In progress', 'Done', 'Canceled']
   
   let priorities = {
-    4: 'Urgent',
-    3: 'High',
-    2: 'Medium',
-    1: 'Low',
+    4: 'Low',
+    3: 'Medium',
+    2: 'High',
+    1: 'Urgent',
     0: 'No priority'
   }
 

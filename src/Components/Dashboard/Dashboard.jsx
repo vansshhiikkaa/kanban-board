@@ -7,6 +7,12 @@ import AddIcon from '@mui/icons-material/Add';
 import InfoIcon from '@mui/icons-material/Info';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
+// imparting required img
+import NoPriorityIcon from './No-priority.png';
+import UrgentIcon from './SVG - Urgent Priority colour.png';
+import HighPriorityIcon from './Img - High Priority.png';
+import MediumPriorityIcon from './Img - Medium Priority.png';
+import LowPriorityIcon from './Img - Low Priority.png';
 
 function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
     const [isLoading, setLoading] = useState(true);
@@ -168,6 +174,13 @@ function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
     if (isLoading) {
         return <div className="App">Loading...</div>;
     }
+    const priorityIcons = [
+        NoPriorityIcon,  // No Priority
+        UrgentIcon,      // Urgent
+        HighPriorityIcon, // High
+        MediumPriorityIcon, // Medium
+        LowPriorityIcon  // Low
+    ];
 
   return (
     <div className='dashboard-main'>
@@ -217,7 +230,7 @@ function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
                 <div className='dashboard-list'>
                     <div className='dashboard-list-header-controls'>
                             <div className='dashboard-list-header-controls-info'>
-                                <PriorityHighIcon sx={{ fontSize: "20px"}}/>
+                                <img src={priorityIcons[key]} alt={`${priorities[key]} icon`} className="priority-icon"/>
                                 <b><p className='dashboard-list-header'>{priorities[key]}</p></b>
                                 <div className='dashboard-list-items-count'>{ticketList.length}</div>
                             </div>

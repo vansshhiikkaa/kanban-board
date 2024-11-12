@@ -194,10 +194,16 @@ function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
     DoneIcon,
     CancelledIcon
 ];
-const userColors = ['#FFADAD', '#FFD6A5', '#FDFFB6', '#CAFFBF', '#9BF6FF', '#A0C4FF', '#BDB2FF'];
+const userColors = ['#ffadad', '#ffd6a5', '#fdffb6', '#caffbf', '#9bf6ff', '#a0c4ff', '#bdb2ff'];
+
+// Create a mapping of user IDs to colors
+const userColorsMap = {};
+data.users.forEach((user, index) => {
+  userColorsMap[user.id] = userColors[index % userColors.length];
+});
+
 const getUserColor = (userId) => {
-    // Use modulus with the length of userColors to get a consistent index for each user
-    return userColors[userId % userColors.length];
+  return userColorsMap[userId] || '#000000'; // Fallback to black if userId not found
 };
 
   return (
@@ -228,7 +234,7 @@ const getUserColor = (userId) => {
                 <div className='dashboard-list'>
                     <div className='dashboard-list-header-controls'>
                             <div className='dashboard-list-header-controls-info'>
-                                <AccountCircleIcon sx={{ color: getUserColor(data['users'][key].id) }}/>
+                                <AccountCircleIcon sx={{ color: getUserColor(data.users[key].id) }}/>
                                 <b><p className='dashboard-list-header'>{data['users'][key].name}</p></b>
                                 <div className='dashboard-list-items-count'>{ticketList.length}</div>
                             </div>

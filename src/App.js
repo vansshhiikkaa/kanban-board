@@ -7,7 +7,7 @@ function App() {
   const [ordering, setOrdering] = useState(localStorage.getItem( 'ordering' ) || "Title")
   
   // initially defined to deal with the case of empty lists
-  let statuses = ['Backlog', "Todo", 'In progress', 'Done', 'Canceled']
+  let statuses = ['Backlog', "Todo", 'In Progress', 'Done', 'Canceled']
   
   let priorities = {
     4: 'Low',

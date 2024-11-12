@@ -198,7 +198,7 @@ const userColors = ['#ff5dad', '#f6bf36', '#0affbf', '#0bf6ff', '#bd76ff'];
 
 // Hash function to map userId to a color
   const getUserColor = (userId) => {
-    return userColors[userId.length() % userColors.length];
+    return userColors[userId.length % userColors.length];
   };
 
   return (

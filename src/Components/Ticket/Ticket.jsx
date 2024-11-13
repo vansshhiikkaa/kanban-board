@@ -6,27 +6,15 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import EmailIcon from '@mui/icons-material/Email';
 
 function Ticket({ticket}) {
-const userColors = ['#ff5dad', '#f6bf36', '#0affbf', '#0bf6ff', '#bd76ff'];
-
-// Create a mapping of user IDs to colors
-// Hash function to map userId to a color
-  const getUserColor = (userId) => {
-    let hash = 0;
-    for (let i = 0; i < userId.length; i++) {
-      hash = userId.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    hash = Math.abs(hash);
-    return userColors[hash % userColors.length];
-  };
   return (
     <div className='ticket-main'>
         <div className='ticket-header'>
             <div className='ticket-id'>{ticket.id}</div>
-            <AccountCircleIcon sx={{ color: getUserColor(ticket.userId) }}/>
+            <AccountCircleIcon color="disabled"/>
         </div>
         <div className='ticket-content'>
             <div className='ticket-content-title'>
-                
+                <CheckCircleOutlineIcon sx={{ fontSize: "16px", color: '#5D3FD3' }} />
                 <div className='ticket-title'><b>{ticket.title}</b></div>
             </div>
         </div>

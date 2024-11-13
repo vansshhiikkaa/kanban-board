@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {useState, useEffect} from 'react'
 import "./Dashboard.css"
@@ -7,18 +8,6 @@ import AddIcon from '@mui/icons-material/Add';
 import InfoIcon from '@mui/icons-material/Info';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PriorityHighIcon from '@mui/icons-material/PriorityHigh';
-// imparting required img
-import NoPriorityIcon from './No-priority.svg';
-import UrgentIcon from './SVG - Urgent Priority colour.svg';
-import HighPriorityIcon from './Img - High Priority.svg';
-import MediumPriorityIcon from './Img - Medium Priority.svg';
-import LowPriorityIcon from './Img - Low Priority.svg';
-
-import ToDoIcon from './To-do.svg';
-import InProgressIcon from './in-progress.svg';
-import BacklogIcon from './Backlog.svg';
-import DoneIcon from './Done.svg';
-import CancelledIcon from './Cancelled.svg';
 
 function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
     const [isLoading, setLoading] = useState(true);
@@ -180,31 +169,6 @@ function Dashboard({statuses, priorities, priorityScores, grouping, ordering}) {
     if (isLoading) {
         return <div className="App">Loading...</div>;
     }
-    const priorityIcons = [
-        NoPriorityIcon,  // No Priority
-        UrgentIcon,      // Urgent
-        HighPriorityIcon, // High
-        MediumPriorityIcon, // Medium
-        LowPriorityIcon  // Low
-    ];
-    const statusIcons = [
-    BacklogIcon,
-    ToDoIcon,
-    InProgressIcon,
-    DoneIcon,
-    CancelledIcon
-];
-const userColors = ['#ff5dad', '#f6bf36', '#0affbf', '#0bf6ff', '#bd76ff', '#ffffff', '#ffffff'];
-
-// Hash function to map userId to a color
-  const getUserColor = (userId) => {
-    let hash = 0;
-    for (let i = 0; i < userId.length; i++) {
-      hash = userId.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    hash = Math.abs(hash);
-    return userColors[hash % userColors.length];
-  };
 
   return (
     <div className='dashboard-main'>
@@ -214,7 +178,7 @@ const userColors = ['#ff5dad', '#f6bf36', '#0affbf', '#0bf6ff', '#bd76ff', '#fff
                 <div className='dashboard-list'>
                     <div className='dashboard-list-header-controls'>
                         <div className='dashboard-list-header-controls-info'>
-                            <img src={statusIcons[key]} alt={`${statuses[key]} icon`} className="status-icon"/>
+                            <InfoIcon color="secondary"/>
                             <b><p className='dashboard-list-header'>{statuses[key]}</p></b>
                             <div className='dashboard-list-items-count'>{ticketList.length}</div>
                         </div>
@@ -234,7 +198,7 @@ const userColors = ['#ff5dad', '#f6bf36', '#0affbf', '#0bf6ff', '#bd76ff', '#fff
                 <div className='dashboard-list'>
                     <div className='dashboard-list-header-controls'>
                             <div className='dashboard-list-header-controls-info'>
-                                <AccountCircleIcon sx={{ color: getUserColor(data.users[key].id) }}/>
+                                <AccountCircleIcon sx={{ color: '#9d9df4' }}/>
                                 <b><p className='dashboard-list-header'>{data['users'][key].name}</p></b>
                                 <div className='dashboard-list-items-count'>{ticketList.length}</div>
                             </div>
@@ -254,7 +218,7 @@ const userColors = ['#ff5dad', '#f6bf36', '#0affbf', '#0bf6ff', '#bd76ff', '#fff
                 <div className='dashboard-list'>
                     <div className='dashboard-list-header-controls'>
                             <div className='dashboard-list-header-controls-info'>
-                                <img src={priorityIcons[key]} alt={`${priorities[key]} icon`} className="priority-icon"/>
+                                <PriorityHighIcon sx={{ fontSize: "20px"}}/>
                                 <b><p className='dashboard-list-header'>{priorities[key]}</p></b>
                                 <div className='dashboard-list-items-count'>{ticketList.length}</div>
                             </div>
